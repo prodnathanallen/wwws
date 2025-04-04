@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Literata';
+    src: url('fonts/Literata-Regular.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
 * {
     font-family: 'Literata', serif;
 }
