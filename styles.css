@@ -1,5 +1,13 @@
 html {
     font-size: 16px;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
 }
 
 * {
@@ -20,6 +28,7 @@ html {
     height: 100vh;
     padding-left: 2rem;
     padding-right: 2rem;
+    overflow-x: hidden;
 }
 
 .item {
@@ -95,14 +104,18 @@ html {
 .bio p + p {
     margin-top: 1.5rem;
 }
+
+/* Hide copyright item on desktop */
 .item.copyright {
     display: none;
 }
+
 /* Image column */
 .right img {
     width: 100%;
     height: auto;
     object-fit: contain;
+    max-width: 100%;
 }
 
 /* ========== Mobile layout (<750px) ========== */
@@ -112,6 +125,9 @@ html {
         height: auto;
         padding-left: 1rem;
         padding-right: 1rem;
+        width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
     }
 
     .item {
@@ -119,6 +135,9 @@ html {
         border-top: 1px solid black;
         padding: 1rem;
         height: auto;
+        width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
     }
 
     .item:first-child {
@@ -140,7 +159,6 @@ html {
         gap: 1rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
-        
     }
 
     .nav-links a {
@@ -159,12 +177,15 @@ html {
         width: 100%;
         height: auto;
         object-fit: contain;
+        max-width: 100%;
     }
+
     .item.copyright {
         display: block;
         border-top: 1px solid black;
         padding: 1rem;
     }
+
     .copyright-text {
         font-size: 12px;
         color: #aaa;
@@ -177,4 +198,10 @@ html {
     body {
         min-width: 480px;
     }
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
