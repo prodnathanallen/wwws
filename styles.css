@@ -1,27 +1,25 @@
-html {
-    font-size: 16px;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-img, video, iframe {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-body {
-    max-width: 100%;
-    overflow-x: hidden;
+/* === Global Fixes === */
+html, body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-size: 16px;
 }
 
 * {
     background: #ffffff;
     text-decoration-color: rgb(21, 21, 22);
-    margin: 0;
     box-sizing: border-box;
     font-family: 'Gambetta-Regular', serif;
-    outline: 1px solid red;
+}
+
+/* Images behave! */
+img, video, iframe {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 /* ========== Desktop layout (≥750px) ========== */
@@ -63,15 +61,15 @@ body {
 .top-text {
     font-size: clamp(24px, 2vw, 64px);
     line-height: 1;
-    /* white-space: nowrap; ← remove this */
+    white-space: normal; /* prevent layout breaking on mobile */
 }
-
 
 /* Nav links */
 .nav-links {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    max-width: 100%;
 }
 
 .nav-links a {
@@ -81,6 +79,8 @@ body {
     border-bottom: 1px solid black;
     width: fit-content;
     transition: color 0.2s ease;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .nav-links a:hover {
@@ -99,7 +99,6 @@ body {
     display: block;
 }
 
-/* Bio text scaling */
 .bio {
     max-width: 60ch;
     margin: 0 auto;
@@ -122,34 +121,30 @@ body {
     width: 100%;
     height: auto;
     object-fit: contain;
-    max-width: 100%;
 }
 
 /* ========== Mobile layout (<750px) ========== */
 @media (max-width: 750px) {
     .grid-container {
         display: block;
+        width: 100vw;
+        max-width: 100vw;
         height: auto;
         padding-left: 0;
         padding-right: 0;
-        width: 100vw;
         overflow-x: hidden;
         box-sizing: border-box;
     }
-    img, video, iframe {
-        max-width: 100%;
-        height: auto;
-        display: block;
-    }
-    
+
     .item {
         border-left: none;
         border-top: 1px solid black;
         padding: 1rem;
         height: auto;
         width: 100%;
-        overflow-x: hidden;
+        max-width: 100%;
         box-sizing: border-box;
+        overflow-x: hidden;
     }
 
     .item:first-child {
@@ -168,17 +163,17 @@ body {
 
     .nav-links {
         flex-direction: row;
+        flex-wrap: wrap;
         gap: 1rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
-        flex-wrap: wrap; /* 👈 ADD THIS */
-        max-width: 100%;  /* 👈 AND THIS */
+        max-width: 100%;
     }
 
     .nav-links a {
         font-size: clamp(18px, 2vw, 28px);
-        max-width: 100%;         /* 👈 prevent wide links */
-        box-sizing: border-box;  /* 👈 keep paddings inside width */
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .bottom-text {
@@ -207,16 +202,4 @@ body {
         color: #aaa;
         text-align: left;
     }
-}
-
-/* Prevent layout collapse on ultra-small screens */
-@media (max-width: 480px) {
-    /* no min-width! */
-}
-
-
-img, video, iframe {
-    max-width: 100%;
-    height: auto;
-    display: block;
 }
