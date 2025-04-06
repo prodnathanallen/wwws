@@ -194,9 +194,9 @@ body {
 }
 
 /* Prevent layout collapse on ultra-small screens */
-@media (max-width: 480px) {
+@media (max-width: 320px) {
     body {
-        min-width: 480px;
+        min-width: 320px;
     }
 }
 
