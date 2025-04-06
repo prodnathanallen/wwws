@@ -171,10 +171,14 @@ body {
         gap: 1rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
+        flex-wrap: wrap; /* 👈 ADD THIS */
+        max-width: 100%;  /* 👈 AND THIS */
     }
 
     .nav-links a {
         font-size: clamp(18px, 2vw, 28px);
+        max-width: 100%;         /* 👈 prevent wide links */
+        box-sizing: border-box;  /* 👈 keep paddings inside width */
     }
 
     .bottom-text {
