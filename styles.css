@@ -194,11 +194,10 @@ body {
 }
 
 /* Prevent layout collapse on ultra-small screens */
-@media (max-width: 320px) {
-    body {
-        min-width: 320px;
-    }
+@media (max-width: 480px) {
+    /* no min-width! */
 }
+
 
 img, video, iframe {
     max-width: 100%;
