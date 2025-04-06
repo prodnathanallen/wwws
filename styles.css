@@ -120,7 +120,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: clamp(15px, 1.2vh, 20px); /* Scales with viewport height */
+    font-size: clamp(14px, 1vh, 20px); /* Scales with viewport height */
     line-height: 1.2;
   }
   
