@@ -145,18 +145,26 @@ html, body {
   /* === Right Column === */
   .right {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;  /* ✅ vertical stacking */
+    align-items: center;     /* center images horizontally */
+    justify-content: flex-start;  /* or center, or space-between */
+    gap: 1rem;               /* optional: space between images */
     height: 100%;
+    overflow-y: auto;        /* optional: scroll if too many */
+    padding: 1rem 0;
   }
   
+  
   .right img {
-    width: 100%;
-    height: auto;
+    width: 100%;         
+    height: auto;        
     object-fit: contain;
-    max-width: 100%;
-    max-height: 100%;
+    display: block;
+    
+    padding: 1rem;
   }
+  
+  
 
   
   .album {
