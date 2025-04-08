@@ -10,6 +10,11 @@ html, body {
     position: relative;
   }
 
+a {
+  color: black;
+  text-decoration-color: #a2a2a2;
+}
+
   .top-text a {
     text-decoration: none;
     color: rgb(38,38,38);
@@ -18,6 +23,7 @@ html, body {
 
   g {
     color: #a2a2a2;
+    
   }
 
   h3 {
@@ -273,7 +279,8 @@ html, body {
   }
   
   .portfolio {
-    line-height: 80%;
+    line-height: 1.1rem;
+    word-spacing: .3rem;
   }
   
 
