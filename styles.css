@@ -9,6 +9,20 @@ html, body {
     font-size: 16px;
     position: relative;
   }
+
+  .top-text a {
+    text-decoration: none;
+    color: rgb(38,38,38);
+    line-height: 1.1
+  }
+
+  g {
+    color: #a2a2a2;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
   
   /* === Global Element Defaults === */
   * {
@@ -19,11 +33,11 @@ html, body {
     max-width: 100vw !important;
   }
   
-  img, video, iframe {
+  /*img, video, iframe {
     display: block;
     max-width: 100%;
     height: auto;
-  }
+  }*/
   
   /* === Wrapper to Lock Layout Inside Viewport === */
   .viewport-fix {
@@ -38,8 +52,8 @@ html, body {
     display: grid;
     grid-template-columns:
       minmax(280px, 400px)     /* name/date */
-      minmax(300px, 400px)     /* bio */
-      minmax(400px, 1fr);      /* image */
+      minmax(400px, 500px)     /* middle column */
+      minmax(200px, 1fr);      /* image */
     height: 100vh;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -114,19 +128,19 @@ html, body {
   }
   
   
-  .bio {
+  /*.bio {
   max-width: 60ch;
   margin: 0 auto;
-  padding: 0 0 2rem 0; /* bottom padding only */
+  padding: 0 0 2rem 0; 
   font-size: clamp(14px, 1.5vw, 18px);
   line-height: 1.8;
-}
+}*/
 
   
   
-  .bio p + p {
+  /*.bio p + p {
     margin-top: 1rem;
-  }
+  }*/
   
   /* === Right Column === */
   .right {
@@ -143,6 +157,23 @@ html, body {
     max-width: 100%;
     max-height: 100%;
   }
+
+  
+  .album {
+    width: 100%;
+    max-width: 350px;  
+    margin: 1rem 0;
+  }
+  
+  .album img {
+    width: 300px;
+    height: auto;
+    display: block;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+    border-radius: 4px;
+  }
+  
+  
   
   /* === Hide Copyright Item on Desktop === */
   .item.copyright {
@@ -208,11 +239,11 @@ html, body {
       display: block;
     }
   
-    .bio {
+    /*.bio {
       font-size: clamp(14px, 1.8vw, 20px);
       line-height: 2;
       padding: 0;
-    }
+    }*/
   
     .right img {
       width: 100%;
@@ -234,3 +265,8 @@ html, body {
     }
   }
   
+  .portfolio {
+    line-height: 80%;
+  }
+  
+
