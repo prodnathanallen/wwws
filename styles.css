@@ -10,7 +10,7 @@ html, body {
     position: relative;
   }
 
-a:link {
+a {
   color: black;
   text-decoration-color: #a2a2a2;
 }
