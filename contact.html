@@ -36,6 +36,15 @@
         <h2>Reach out, say hello!</h2><p> My production email is <a href="mailto:prodnathanallen@gmail.com">prodnathanallen@gmail.com</a>.</p>
         
       </div>
+      <form id="contact-form">
+        <input type="text" id="name" placeholder="Name" required><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <textarea id="message" placeholder="Message" required></textarea><br>
+        <button type="submit">Send</button>
+      </form>
+      
+      <div id="status"></div> <!-- for success/failure message -->
+      
 
       <!-- Right column -->
       <div class="item right">
@@ -50,5 +59,32 @@
     </div>
   </div>
   <script src="script.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(event) {
+      event.preventDefault(); // stop default HTML form behavior
+      
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+    
+      const response = await fetch('http://localhost:56477/api/contacts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message })
+      });
+    
+      const statusDiv = document.getElementById('status');
+    
+      if (response.ok) {
+        statusDiv.innerText = 'Thanks for reaching out!';
+        statusDiv.style.color = 'green';
+        document.getElementById('contact-form').reset();
+      } else {
+        statusDiv.innerText = 'Something went wrong. Please try again.';
+        statusDiv.style.color = 'red';
+      }
+    });
+    </script>
+    
 </body>
 </html>
