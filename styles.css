@@ -68,7 +68,7 @@ a {
   
   .item {
     padding: 1rem;
-    border-left: 1px solid black;
+    border-left: 1px solid #c2c2c2;
     height: 100%;
     overflow: hidden;
     width: 100%;
